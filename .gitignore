@@ -1,0 +1,26 @@
+# Java build artifacts
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Build/output dirs
+/bin/
+/out/
+/build/
+/target/
+
+# IDE/project files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+.vscode/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
