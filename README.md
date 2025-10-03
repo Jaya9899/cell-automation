@@ -73,6 +73,6 @@ public class BriansBrain implements Automata {
 
 Fork this repo, add your automaton class, wire it up, and open a PR with a short description and a screenshot. Let's learn together.
 
-## UI
-
-![UI preview]("\cell-automation-ss.png")
+ ## UI
+ 
+ ![UI preview](cell-automation-ss.png)
