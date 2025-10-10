@@ -1,3 +1,4 @@
+
 import java.awt.*;
 
 public class GridControl {
@@ -17,7 +18,6 @@ public class GridControl {
     public void setAutomaton(Automata automaton) {
         this.automaton = automaton;
     }
-
     private void addListeners() {
         frame.getPlayButton().addActionListener(_ -> start());
         frame.getPauseButton().addActionListener(_ -> pause());
@@ -44,7 +44,7 @@ public class GridControl {
             while (running) {
                 automaton.nextGeneration(grid);
                 frame.repaintGrid();
-                try { Thread.sleep(200); } catch (InterruptedException ignored) {}
+                try { Thread.sleep(500); } catch (InterruptedException ignored) {}
             }
         });
         playThread.start();

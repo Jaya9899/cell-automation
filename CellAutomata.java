@@ -20,12 +20,12 @@ class CAframe extends Frame {
         setLayout(new BorderLayout());
 
         cells = new boolean[rows][cols];
-
+        Color PURPLE = new Color(167, 148, 171);
         controlPanel = new Panel(new FlowLayout(FlowLayout.LEFT, 8, 8));
-        controlPanel.setBackground(Color.DARK_GRAY);
+        controlPanel.setBackground(PURPLE);
         playbtn = new Button("Play");
         pausebtn = new Button("Pause");
-        stopbtn = new Button("Stop");
+        stopbtn = new Button("Reset");
         randombtn = new Button("Random Pattern");
         automataType = new Choice();
         
@@ -51,32 +51,44 @@ class CAframe extends Frame {
         add(controlPanel, BorderLayout.NORTH);
 
         gridCanvas = new Canvas() {
-            @Override
-            public void update(Graphics g) {
-                paint(g); 
-            }
+            Image offscreen;
+            Graphics offG;
 
             @Override
             public void paint(Graphics g) {
                 int canvasWidth = getWidth();
                 int canvasHeight = getHeight();
 
-                int cellSize = Math.min(canvasWidth / cols, canvasHeight / rows);
+                if (offscreen == null || offscreen.getWidth(this) != canvasWidth || offscreen.getHeight(this) != canvasHeight) {
+                    offscreen = createImage(canvasWidth, canvasHeight);
+                    offG = offscreen.getGraphics();
+                }
 
+                offG.setColor(getBackground());
+                offG.fillRect(0, 0, canvasWidth, canvasHeight);
+
+                int cellSize = Math.min(canvasWidth / cols, canvasHeight / rows);
                 int xOffset = (canvasWidth - cellSize * cols) / 2;
                 int yOffset = (canvasHeight - cellSize * rows) / 2;
-
+                Color PINK = new Color(219, 196, 224);
                 for (int i = 0; i < rows; i++) {
                     for (int j = 0; j < cols; j++) {
-                        g.setColor(cells[i][j] ? Color.GREEN : Color.BLACK);
-                        g.fillRect(xOffset + j * cellSize, yOffset + i * cellSize, cellSize, cellSize);
-
-                        g.setColor(Color.DARK_GRAY);
-                        g.drawRect(xOffset + j * cellSize, yOffset + i * cellSize, cellSize, cellSize);
+                        offG.setColor(cells[i][j] ? PINK : Color.BLACK);
+                        offG.fillRect(xOffset + j * cellSize, yOffset + i * cellSize, cellSize, cellSize);
+                        offG.setColor(Color.DARK_GRAY);
+                        offG.drawRect(xOffset + j * cellSize, yOffset + i * cellSize, cellSize, cellSize);
                     }
                 }
+
+                g.drawImage(offscreen, 0, 0, this);
+            }
+
+            @Override
+            public void update(Graphics g) {
+                paint(g); 
             }
         };
+
 
         gridCanvas.addMouseListener(new MouseAdapter() {
             @Override
@@ -104,14 +116,14 @@ class CAframe extends Frame {
         add(gridContainer, BorderLayout.CENTER);
 
         bottomPanel = new Panel(new FlowLayout(FlowLayout.LEFT, 10, 5));
-        bottomPanel.setBackground(Color.DARK_GRAY);
+        bottomPanel.setBackground(PURPLE);
 
         rulesBtn = new Button("Rules");
         aboutBtn = new Button("About");
-        helpBtn = new Button("Help");
+       
         bottomPanel.add(rulesBtn);
         bottomPanel.add(aboutBtn);
-        bottomPanel.add(helpBtn);
+      
 
         add(bottomPanel, BorderLayout.SOUTH);
         addWindowListener(new WindowAdapter() {
@@ -144,15 +156,14 @@ class CAframe extends Frame {
         public Button getAboutButton() { 
             return aboutBtn; 
         }
-        public Button getHelpButton() { 
-            return helpBtn; 
-        }
         public void repaintGrid() { 
             gridCanvas.repaint(); 
         }
         public boolean[][] getCells() { 
             return cells; 
         }
+        
+
         
 }
 public class CellAutomata {
