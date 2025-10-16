@@ -1,0 +1,60 @@
+[33mcommit 7ea95e5bb70882b8d479409ab285fd501f3d4741[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Sat Oct 11 01:01:25 2025 +0530
+
+    Fix: Removed flicker lag and fixed oscillation period
+
+[33mcommit d9c96360e744aadcb744eb332a883a9c27b3c319[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Fri Oct 3 13:00:24 2025 +0530
+
+    Fix README img link
+
+[33mcommit 7ea5f156330ada5bb6d6926555dc0afd3da06dd5[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Fri Oct 3 12:58:28 2025 +0530
+
+    Rewrite README, add ss
+
+[33mcommit 0f7764a13a68bb126df6dcc0b972ae1bc7806f39[m
+Merge: 78897c2 d38b657
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Fri Oct 3 12:43:52 2025 +0530
+
+    Merge branch 'main' of https://github.com/Jaya9899/cell-automation
+
+[33mcommit d38b657877fbcf5aca4e0ec5bb8d2250024c001b[m
+Author: jayacandocs <176131228+Jaya9899@users.noreply.github.com>
+Date:   Fri Oct 3 12:40:56 2025 +0530
+
+    Initial commit
+
+[33mcommit 78897c2d61e6707940866c48931c1b1c908739ed[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Fri Oct 3 12:40:06 2025 +0530
+
+    Initial commit of Java sources
+
+[33mcommit c1522a4b042afd8973534abcf1df503f2e53ca65[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Fri Oct 3 12:39:36 2025 +0530
+
+    Stop tracking class files; add .gitignore
+
+[33mcommit a7605f6f0ad5537bc94cffdfdd8590c59ffc850f[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Wed Oct 1 18:31:57 2025 +0530
+
+    Committed ALL
+
+[33mcommit a869b0027408f3840ae59e0aa23ca3f0c029afb3[m
+Author: Jaya9899 <176131228+Jaya9899@users.noreply.github.com>
+Date:   Wed Oct 1 18:31:27 2025 +0530
+
+    Committed all java files (1)
+
+[33mcommit cd49e11d0c9c9c257638f97eb534c3305bec095e[m
+Author: jayacandocs <176131228+Jaya9899@users.noreply.github.com>
+Date:   Wed Oct 1 18:28:29 2025 +0530
+
+    Initial commit

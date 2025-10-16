@@ -1,5 +1,3 @@
-//conway game of life implementation
-
 public class ConwayGame implements Automata {
     @Override 
     public void nextGeneration(boolean[][] cells) {

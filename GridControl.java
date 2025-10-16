@@ -44,7 +44,7 @@ public class GridControl {
             while (running) {
                 automaton.nextGeneration(grid);
                 frame.repaintGrid();
-                try { Thread.sleep(500); } catch (InterruptedException ignored) {}
+                try { Thread.sleep(150); } catch (InterruptedException ignored) {}
             }
         });
         playThread.start();
